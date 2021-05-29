@@ -9,11 +9,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DownloadsController {
-    @RequestMapping(value = "/download")
+    @RequestMapping(path = "download", method=RequestMethod.GET)
     public ResponseEntity<Object> downloadFile() throws IOException  {
         String filename = "/var/tmp/mysql.png";
         File file = new File(filename);
